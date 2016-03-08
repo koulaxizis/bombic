@@ -1,0 +1,43 @@
+Bombic is a Bomberman (a.k.a. Dynablaster) clone
+
+It was created by Bernard Lidicky & Zdenek Boswart
+
+Game's website: http://sourceforge.net/projects/bombic/
+
+Features:
+- Single player mode with nice story & missions
+- Deathmatch against friends (no network support)
+- Cooperative mode (you have to play on one computer)
+- English, German, Czech and Polish language available
+
+This is an slightly altered version of the original game
+
+It contains small changes and more languages support
+
+Changes:
+- Full Greek language support (menu & story)
+- Replaced FreeMono font with DejaVuSans
+- Enabled sound according to the official guide
+- More to come... ;)
+
+===
+
+How to install:
+
+Download the files
+
+Go to the download directory
+
+Decompress the downloaded file in place
+
+Open a terminal inside the decompressed folder
+
+Type:
+
+./configure
+
+make
+
+make install
+
+Ready! Enjoy!! :)

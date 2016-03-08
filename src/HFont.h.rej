@@ -1,0 +1,43 @@
+***************
+*** 2,7 ****
+  #define HFONT_H                                                                                                                                                               
+                                                                                                                                                                                
+                                                                                                                                                                                
+  #include <SDL.h>                                                                                                                                                              
+  #include <SDL_ttf.h>                                                                                                                                                          
+  #include <string>                                                                                                                                                             
+--- 2,8 ----
+  #define HFONT_H                                                                                                                                                               
+                                                                                                                                                                                
+                                                                                                                                                                                
++ #include "searchimage.h"                                                                                                                                                      
+  #include <SDL.h>                                                                                                                                                              
+  #include <SDL_ttf.h>                                                                                                                                                          
+  #include <string>                                                                                                                                                             
+***************
+*** 56,67 ****
+      {                                                                                                                                                                         
+                                                                                                                                                                                
+         m_font = NULL;                                                                                                                                                         
+-        if(!TTF_WasInit() && TTF_Init()==-1) {                                                                                                                                 
+                 std::cerr << "TTF_Init: " << TTF_GetError() << std::endl;                                                                                                      
+                 return;                                                                                                                                                        
+         }                                                                                                                                                                      
+                                                                                                                                                                                
+-        m_font = TTF_OpenFont(file, ptsize);                                                                                                                                   
+         if(!m_font) {                                                                                                                                                          
+                 std::cerr << "Unable to open font" << file                                                                                                                     
+                           << ": " << TTF_GetError() << std::endl;                                                                                                              
+--- 57,68 ----
+      {                                                                                                                                                                         
+                                                                                                                                                                                
+         m_font = NULL;                                                                                                                                                         
++        if(/*!TTF_WasInit() && */TTF_Init()==-1) {                                                                                                                             
+                 std::cerr << "TTF_Init: " << TTF_GetError() << std::endl;                                                                                                      
+                 return;                                                                                                                                                        
+         }                                                                                                                                                                      
+                                                                                                                                                                                
++        m_font = SearchFont(file, ptsize);                                                                                                                                     
+         if(!m_font) {                                                                                                                                                          
+                 std::cerr << "Unable to open font" << file                                                                                                                     
+                           << ": " << TTF_GetError() << std::endl;                                                                                                              
